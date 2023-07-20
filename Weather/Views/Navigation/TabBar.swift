@@ -13,6 +13,29 @@ struct TabBar: View {
     
     var body: some View {
         ZStack {
+            
+            Arc()
+                .fill(Color.tabBarBackground)
+                .frame(height: 88)
+                .overlay {
+                    Arc()
+                        .stroke(Color.tabBarBorder, lineWidth: 0.5)
+                }
+            
+//            AddButtonTabBar()
+//                .fill(Color.backgroud)
+//                .frame(width: 258, height: 100)
+//            
+//            Image("Ellipse 1")
+//                .blur(radius: 0.5)
+//            Image("Ellipse 2")
+//            Image("Ellipse Blur")
+//            
+//            Image(systemName: "plus")
+//                .font(.system(size: 28))
+//                .bold()
+//                .foregroundColor(Color(red: 0.28, green: 0.19, blue: 0.62))
+            
             // MARK: Tab Items
             HStack {
                     //MARK: Expand Button
