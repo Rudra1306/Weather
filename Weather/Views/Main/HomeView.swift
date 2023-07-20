@@ -9,43 +9,51 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack {
-            // MARK: Background color
-            Color.backgroud
-                .ignoresSafeArea()
-            
-            //MARK: Background Image
-            Image("Background")
-                .resizable()
-                .ignoresSafeArea()
-            
-            //MARK: House Image
-            Image("House")
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.top, 257)
-            
-            //MARK: Temp Detail Stack Start
-            
-            VStack {
-                Text("Montreal")
-                    .font(.largeTitle)
+        NavigationView {
+            ZStack {
+                // MARK: Background color
+                Color.backgroud
+                    .ignoresSafeArea()
+                
+                //MARK: Background Image
+                Image("Background")
+                    .resizable()
+                    .ignoresSafeArea()
+                
+                //MARK: House Image
+                Image("House")
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .padding(.top, 257)
+                
+                //MARK: Temp Detail Stack Start
                 
                 VStack {
-
-                    Text(attributedString)
+                    Text("Montreal")
+                        .font(.largeTitle)
                     
-                    Text("H:24°  L:18°")
-                        .font(.title3.weight(.semibold))
+                    VStack {
+
+                        Text(attributedString)
+                        
+                        Text("H:24°  L:18°")
+                            .font(.title3.weight(.semibold))
+                    }
+                    
+                    Spacer()
                 }
+                .padding(.top, 51)
                 
-                Spacer()
+                
+                //MARK: Temp Detail Stack End
+                
+                TabBar(action: {})
+                
             }
-            .padding(.top, 51)
-            
-            
-            //MARK: Temp Detail Stack End
+            .navigationBarHidden(true)
         }
     }
+    
+    //MARK: Attributed String Declaration
     
     private var attributedString: AttributedString {
         var string = AttributedString("19°" + "\n " + "Mostly Clear")
