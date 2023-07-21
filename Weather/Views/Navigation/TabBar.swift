@@ -22,7 +22,7 @@ struct TabBar: View {
                         .stroke(Color.tabBarBorder, lineWidth: 0.5)
                 }
             
-//            AddButtonTabBar()
+//            Trapazoid()
 //                .fill(Color.backgroud)
 //                .frame(width: 258, height: 100)
 //            
